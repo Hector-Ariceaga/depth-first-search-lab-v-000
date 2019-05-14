@@ -15,7 +15,7 @@ let depthFirstSearch = (startNode, vertices, edges) => {
   return visited;
 }
 
-let find = (vertexName, vertices) => {
+let findVertex = (vertexName, vertices) => {
   return vertices.find(vertex => vertex.name ==  vertexName)
 }
 
@@ -27,9 +27,7 @@ let findAdjacentNodes = (nodeName, vertices, edges) => {
       return node != nodeName
     })
   }).map(vertexName => {
-    return vertices.find(vertex => {
-      return vertex.name == vertexName
-    })
+    return findVertex(vertexName, vertices);
   }).filter(node => {
     return node.discovered == null
   })
