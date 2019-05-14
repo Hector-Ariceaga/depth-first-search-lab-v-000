@@ -13,5 +13,5 @@ let depthFirstSearch = (startNode, vertices, edges) => {
 }
 
 let findAdjacentNodes = (node, vertices, edges) => {
-  
+
 }
