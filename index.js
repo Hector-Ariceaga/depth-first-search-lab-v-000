@@ -1,6 +1,5 @@
 let depthFirstSearch = (startNode, vertices, edges) => {
   let stack = [startNode];
-  startNode.discovered = true;
   let visited = [startNode];
 
   while(stack.length != 0) {
