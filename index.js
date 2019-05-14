@@ -16,7 +16,7 @@ let depthFirstSearch = (startNode, vertices, edges) => {
 }
 
 let findAdjacentNodes = (nodeName, vertices, edges) => {
-  edges.filter(edge => {
+  return edges.filter(edge => {
     return edge.includes(nodeName)
   }).map(edge => {
     return edge.filter(node => {
