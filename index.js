@@ -15,6 +15,10 @@ let depthFirstSearch = (startNode, vertices, edges) => {
   return visited;
 }
 
+let find = (vertexName, vertices) => {
+  return vertices.find(vertex => vertex.name ==  vertexName)
+}
+
 let findAdjacentNodes = (nodeName, vertices, edges) => {
   return edges.filter(edge => {
     return edge.includes(nodeName)
