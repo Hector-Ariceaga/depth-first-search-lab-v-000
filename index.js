@@ -1,15 +1,19 @@
 let depthFirstSearch = (startNode, vertices, edges) => {
-  let queue = [startNode];
+  let stack = [startNode];
   startNode.discovered = true;
-  let visitedQueue = [startNode];
+  let visited = [startNode];
 
-  while(queue.length != 0) {
-    let currentNode = queue.pop()
+  while(stack.length != 0) {
+    let currentNode = stack.pop();
     if (!currentNode.discovered) {
       currentNode.discovered = true
-      findAdjacentNodes(currentNode.name, vertices, edges).forEach(node => queue.push(node))
+      findAdjacentNodes(currentNode.name, vertices, edges).forEach(node => {
+        visited.push(node);
+        stack.push(node);
+      })
     }
   }
+  return visited;
 }
 
 let findAdjacentNodes = (nodeName, vertices, edges) => {
