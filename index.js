@@ -7,6 +7,7 @@ let depthFirstSearch = (startNode, vertices, edges) => {
     let currentNode = queue.pop()
     if (!currentNode.discovered) {
       currentNode.discovered = true
+      findAdjacentNodes(currentNode.name, vertices, edges).forEach(node => queue.push(node))
     }
   }
 }
